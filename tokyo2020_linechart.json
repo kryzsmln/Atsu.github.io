@@ -1,0 +1,23 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "data": {"url": "https://raw.githubusercontent.com/kryzsmln/3179/main/2020_Olympics_Dataset%20(2)_2020_Olympics_Dataset.csv"},
+    "mark": "line",
+    "encoding": {
+      "x": {"field": "Age", "type": "quantitative"},
+      "y": {
+        "aggregate": "count",
+        "type": "quantitative",
+        "title": "Color of Medal"
+      },
+      "color": {
+        "field": "Medal",
+        "type": "nominal",
+        "scale": {
+          "domain": ["Gold", "Silver", "Bronze"],
+          "range": ["#e7ba52", "#c7c7c7", "#a16b20"]
+        },
+        "title": "Color of Medal"
+      }
+    }
+  }
+  

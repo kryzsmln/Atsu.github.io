@@ -1,0 +1,16 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "A simple pie chart with embedded data.",
+  "data": {
+    "url": "https://raw.githubusercontent.com/kryzsmln/3179/main/2020_Olympics_Dataset.csv"
+  },
+  "mark": "arc",
+  "encoding": {
+    "theta": {"field": "Gender", "type": "nominal", "aggregate": "count"},
+    "color": {"field": "Gender", "type": "nominal",
+    "scale": {
+        "domain": ["Male", "Female"],
+        "range": ["#0004ff", "#f21105"]}
+  }
+  }
+}
