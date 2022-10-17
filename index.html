@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Multiple Visualisations | An Example</title>
+  <!-- Import Vega & Vega-Lite (does not have to be from CDN) -->
+  <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
+
+  <!-- Import pure.css -->
+  <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css"
+    integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Google font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+
+  <!-- CSS file -->
+  <link rel="stylesheet" type="text/css" href="css/styles.css" media="all">
+
+ 
+</head>
+
+
+<body>
+
+  <div class="page">
+
+    <!-- pure grid group -->
+    <div class="pure-g">
+      <div class="pure-u-1-1">
+        <h1 style="color:blue; text-align: center;">Tokyo 2020 Olympic</h1>
+        <h2 style = "color:navy; text-align: center;">Atsu Mizoguchi</h2>
+        <p style = "color: #3d5063;text-align: center;"> <b>Tokyo 2020 Olympic</b> was held from <b>23 July to 8 August 2021</b> in <b>Tokyo, Japan.</b> 
+        It was postponed for a year due to the outbreak of COVID-19 which made it the <b>first Olympic games to be held in an odd-numbered year</b>. 
+        A variety of sports were conducted including <b>five new sports</b>; surfing, climbing, skateboarding, baseball, and karate.
+
+        The following visualisations displays the comparison of different factors in the <b>Tokyo 2020 Olympic</b> such as countries winning the most medal, individuals winning the most medal, how age impacts the winning of medals, and athlete gender comparison among different sports.
+            </p>
+      </div>
+    </div>
+    <!-- end pure grid group -->
+
+    <!-- pure grid group -->
+    <div class="pure-g">
+      <div class="pure-u-1-1">
+        <div class="description description-left">
+          <h1 style="color:rgba(231, 231, 37, 0.795);text-align: center;">Medal Distribution Map</h1>
+          <p style = "color: #3d5063;text-align: center;">The <b>map visualisation</b> above represents the <b>amount of medals each country has won</b> with the size of the circle. 
+              Each circle is a representation of medals they have won. 
+              The country which received the most medals is the <b>US with 113 medals</b> in total followed by <b>China with 88 medals</b> and <b>Japan with 58 medals</b>. </p>
+        </div>
+      </div>
+      <div class="pure-u-1-1 align='center'">
+        <div id="vis1" class="vis-container"></div>
+      </div>
+    </div>
+    <!-- end pure grid group -->
+
+    <!-- pure grid group -->
+    <div class="pure-g">
+      <div class="pure-u-1-2">
+        <div class="description description-left">
+          <h2 style="color:black;">Gender Ratio in Tokyo 2020 Olympics</h2>
+          <p style = "color: #3d5063;">The <b>pie chart</b> on the left is representing the <span style="color: #0004ff">male</span> vs <span style="color: #f21105">female</span> ratio. 
+            There are duplicates per individual as some athletes attend more than one category. 
+            From this pie chart we can tell that the ratio is pretty close to <b>50:50</b>; however, there are more male athletes than female athletes with <span style="color: #0004ff">7855 male athletes</span> and <span style="color: #f21105">7266 femals athletes</span>. 
+             </p>
+        </div>
+    </div>
+    <div class="pure-u-1-2">
+      <div id="vis2" class="vis-container"></div>
+    </div>
+  </div>
+    <!-- end pure grid group -->
+
+    <!-- pure grid group -->
+    <div class="pure-g">
+        <div class="pure-u-1-2">
+          <div class="description description-left">
+            <h2 style="color:green;">Age vs Medal</h2>
+            <p style = "color: #3d5063;">The age with the most <span style="color: #e7ba52">gold medals</span> is <b>24 years old </b>with <span style="color: #e7ba52">73 medals</span>. 
+                The age with the most <span style="color: #c7c7c7">silver medals</span> is <b>24 years old</b> with <span style="color: #c7c7c7">84 medals</span>. 
+                The age with the most <span style="color: #a16b20">bronze medals</span> is <b>27 years old</b> with <span style="color: #a16b20">85 medals</span>. 
+                In fact, the age with the second most <span style="color: #a16b20">bronze medals</span> is <b>24 years old</b> with <span style="color: #a16b20">83 medals</span>. 
+                This makes <b>24 years old</b> to be the age with the most medals of <b>73+ 84+ 85 = 242 medals</b>. </p>
+            </div>
+        </div>
+        <div class="pure-u-1-2">
+          <div id="vis3" class="vis-container"></div>
+        </div>
+      </div>
+    <!-- end pure grid group -->
+
+    <!-- pure grid group -->
+    <div class="pure-g">
+        <div class="pure-u-1-2">
+          <div class="description description-left">
+            <h2 style="color:red;">Top 7 Individual with most medal won</h2>
+            <p style = "color: #3d5063;">The individual who won the most medals is <b>McKeon Emma</b> with <b>7 medals</b>. 
+                She won <span style="color: #e7ba52">4 Gold medals</span> in Women's 100m freestyle·Swimming, Women's 4x100m freestyle relay·Swimming, Women's 4x100m medley relay·Swimming, Women's 50m freestyle·Swimming, and <span style="color: #a16b20">3 bronze medals</span> in Mixed 4x100m medley relay·Swimming, Women's 100m butterfly·Swimming, and Women's 4x200m freestyle relay·Swimming. 
+                Second place is <b>Dressel Caeleb</b> who won <span style="color: #e7ba52">5 medals which are all gold medals</span> which makes him the <b>individual who won the most gold medals in the whole Tokyo Olympic 2020</b>. 
+                There are <b>5 individuals</b> who are in <b>third place</b> each winning <b>4 medals</b>.</p>
+            </div>
+        </div>
+        <div class="pure-u-1-2">
+          <div id="vis4" class="vis-container"></div>
+        </div>
+      </div>
+      <!-- end pure grid group -->
+
+  </div> <!-- end page -->
+
+  <script type="text/javascript">
+    var vg_1 = "tokyo2020_map.json";
+    var vg_2 = "tokyo2020_piechart.json";
+    var vg_3 = "tokyo2020_linechart.json";
+    var vg_4 = "tokyo2020_bargraph.json";
+
+    vegaEmbed("#vis1", vg_1).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+
+    vegaEmbed('#vis2', vg_2,).then(function (result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+
+    vegaEmbed('#vis3', vg_3,).then(function (result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+
+    vegaEmbed('#vis4', vg_4,).then(function (result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+  </script>
+</body>
+
+</html>
